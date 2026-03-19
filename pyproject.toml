@@ -1,0 +1,22 @@
+[project]
+name = "xiaohongshu-mcp"
+version = "0.1.0"
+description = "小红书 MCP 服务器 - fastmcp + Playwright 实现"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0",
+    "playwright>=1.40.0",
+]
+
+[project.scripts]
+xhs-mcp = "main:main"
+xhs-setup = "setup:main"
+
+[tool.uv]
+package = false
+dev-dependencies = []
+
+# 安装后自动下载浏览器
+[tool.hatch.build.hooks.custom]
+path = "setup.py"
